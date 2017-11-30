@@ -10,7 +10,6 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
 && apk add --no-cache giflib-dev \
 && apk add --no-cache libpng-dev \
 && apk add --no-cache boost-dev \
-&& apk add --no-cache gearman-dev \
 && apk add --no-cache openblas-dev  \
 && apk add --no-cache jsoncpp-dev \
 && apk add ca-certificates wget \

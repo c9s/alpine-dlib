@@ -13,10 +13,14 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
 && apk add --no-cache gearman-dev \
 && apk add --no-cache openblas-dev  \
 && apk add --no-cache jsoncpp-dev \
-&& apk add ca-certificates wget
+&& apk add ca-certificates wget \
+&& rm -rf /var/cache/apk/*
+
 
 RUN wget -c -q https://github.com/davisking/dlib/archive/master.tar.gz \
 && tar xvf master.tar.gz \
 && mv dlib-master dlib \
+&& (mkdir -p dlib/build \
+    && cd dlib/build \
+    && cmake .. && make -j4 && make install) \
 && rm master.tar.gz
-

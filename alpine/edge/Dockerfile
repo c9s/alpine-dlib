@@ -12,6 +12,8 @@ RUN apk update \
        openblas-dev  \
        lapack \
        lapack-dev \
+       openblas \
+       openblas-dev \
        ca-certificates wget \
     && rm -rf /var/cache/apk/*
 

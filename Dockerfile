@@ -18,5 +18,5 @@ RUN wget -c -q https://github.com/davisking/dlib/archive/master.tar.gz \
 && mv dlib-master dlib \
 && (mkdir -p dlib/build \
     && cd dlib/build \
-    && cmake .. && make -j && make install) \
+    && cmake -DDLIB_PNG_SUPPORT=ON -DDLIB_GIF_SUPPORT=ON -DDLIB_JPEG_SUPPORT=ON .. && make -j && make install) \
 && rm master.tar.gz

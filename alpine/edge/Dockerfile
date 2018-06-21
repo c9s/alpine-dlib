@@ -7,9 +7,8 @@ RUN apk update \
        make \
        jpeg jpeg-dev \
        libpng libpng-dev \
-       giflib-dev \
+       giflib giflib-dev \
        boost-dev \
-       openblas-dev  \
        lapack \
        lapack-dev \
        openblas \

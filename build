@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e -x
+repo=yoanlin/alpine-dlib
+for dockerfile in */Dockerfile ; do
+    dir=$(dirname $dockerfile)
+    tag=$dir
+    docker build --tag $repo:$tag $dir
+done
+docker push $repo

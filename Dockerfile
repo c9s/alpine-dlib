@@ -1,15 +1,16 @@
-FROM alpine:3.7
+FROM yoanlin/boost-dev:alpine-edge
+
 RUN apk update \
     && apk add --no-cache git \
-    && apk add --no-cache cmake \
-    && apk add --no-cache g++ \
-    && apk add --no-cache make \
-    && apk add --no-cache jpeg-dev \
-    && apk add --no-cache giflib-dev \
-    && apk add --no-cache libpng-dev \
-    && apk add --no-cache boost-dev \
-    && apk add --no-cache openblas-dev  \
-    && apk add ca-certificates wget \
+       cmake \
+       g++ \
+       make \
+       jpeg jpeg-dev \
+       libpng libpng-dev \
+       giflib-dev \
+       boost-dev \
+       openblas-dev  \
+       ca-certificates wget \
     && rm -rf /var/cache/apk/*
 
 RUN wget -c -q https://github.com/davisking/dlib/archive/master.tar.gz \
@@ -17,5 +18,5 @@ RUN wget -c -q https://github.com/davisking/dlib/archive/master.tar.gz \
 && mv dlib-master dlib \
 && (mkdir -p dlib/build \
     && cd dlib/build \
-    && cmake .. && make -j4 && make install) \
+    && cmake .. && make -j && make install) \
 && rm master.tar.gz

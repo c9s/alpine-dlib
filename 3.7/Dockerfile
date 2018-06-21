@@ -8,9 +8,6 @@ RUN apk update \
        jpeg jpeg-dev \
        libpng libpng-dev \
        giflib giflib-dev \
-       boost-dev \
-       lapack \
-       lapack-dev \
        openblas \
        openblas-dev \
        ca-certificates wget \

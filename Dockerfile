@@ -9,7 +9,6 @@ RUN apk update \
     && apk add --no-cache libpng-dev \
     && apk add --no-cache boost-dev \
     && apk add --no-cache openblas-dev  \
-    && apk add --no-cache jsoncpp-dev \
     && apk add ca-certificates wget \
     && rm -rf /var/cache/apk/*
 

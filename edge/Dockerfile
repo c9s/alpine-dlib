@@ -1,4 +1,4 @@
-FROM yoanlin/boost-dev:alpine-edge
+FROM yoanlin/alpine-boost-dev:edge
 
 RUN apk update \
     && apk add --no-cache git \

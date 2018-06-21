@@ -1,4 +1,4 @@
-alpine3.7:
+alpine/3.7:
 	docker build -t yoanlin/dlib:$@ $@
 
 latest:

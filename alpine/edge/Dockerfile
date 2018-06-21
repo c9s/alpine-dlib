@@ -10,6 +10,8 @@ RUN apk update \
        giflib-dev \
        boost-dev \
        openblas-dev  \
+       lapack \
+       lapack-dev \
        ca-certificates wget \
     && rm -rf /var/cache/apk/*
 

@@ -1,1 +1,1 @@
-alpine/edge/Dockerfile
+edge/Dockerfile

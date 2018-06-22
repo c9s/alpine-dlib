@@ -19,7 +19,7 @@ RUN wget -c -q https://github.com/davisking/dlib/archive/master.tar.gz \
 
 RUN mkdir -p dlib/build \
  && (cd dlib/build \
-    && cmake -DDLIB_PNG_SUPPORT=ON -DDLIB_GIF_SUPPORT=ON -DDLIB_JPEG_SUPPORT=ON .. \
-    && make \
+    && cmake -DCMAKE_BUILD_TYPE=Release -DDLIB_PNG_SUPPORT=ON -DDLIB_GIF_SUPPORT=ON -DDLIB_JPEG_SUPPORT=ON .. \
+    && cmake --build . --config Release -- -j2 \
     && make install) \
  && rm master.tar.gz

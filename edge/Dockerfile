@@ -17,11 +17,11 @@ WORKDIR /
 # ARG BRANCH=master
 ARG BRANCH=v19.13
 RUN wget -c -q https://github.com/davisking/dlib/archive/${BRANCH}.tar.gz \
- && tar xf master.tar.gz \
- && mv dlib-master dlib \
+ && tar xf ${BRANCH}.tar.gz \
+ && mv dlib-${BRANCH} dlib \
  && mkdir -p /dlib/build \
  && (cd /dlib/build \
     && cmake -DCMAKE_BUILD_TYPE=Release -DDLIB_PNG_SUPPORT=ON -DDLIB_GIF_SUPPORT=ON -DDLIB_JPEG_SUPPORT=ON .. \
     && cmake --build . --config Release -- -j2 \
     && make install) \
- && rm -rf master.tar.gz /dlib/build
+ && rm -rf *.tar.gz /dlib/build

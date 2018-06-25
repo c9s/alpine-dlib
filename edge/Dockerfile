@@ -3,14 +3,14 @@ FROM yoanlin/alpine-boost-dev:edge
 RUN apk update \
     && apk add --no-cache git \
        cmake \
-       g++ \
+       libstdc++ libgcc g++ \
        make \
        jpeg jpeg-dev \
        libpng libpng-dev \
        giflib giflib-dev \
        openblas \
        openblas-dev \
-       ca-certificates wget \
+       ca-certificates curl wget \
     && rm -rf /var/cache/apk/*
 
 RUN wget -c -q https://github.com/davisking/dlib/archive/master.tar.gz \

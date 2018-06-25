@@ -14,9 +14,10 @@ RUN apk update \
     && rm -rf /var/cache/apk/*
 
 WORKDIR /
-ARG BRANCH=master
+# ARG BRANCH=master
+ARG BRANCH=v19.13
 RUN wget -c -q https://github.com/davisking/dlib/archive/${BRANCH}.tar.gz \
- && tar xvf master.tar.gz \
+ && tar xf master.tar.gz \
  && mv dlib-master dlib \
  && mkdir -p /dlib/build \
  && (cd /dlib/build \

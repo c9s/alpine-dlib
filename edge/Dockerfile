@@ -18,9 +18,9 @@ WORKDIR /
 ARG BRANCH=v19.13
 RUN wget -c -q https://github.com/davisking/dlib/archive/${BRANCH}.tar.gz \
  && tar xf ${BRANCH}.tar.gz \
- && mv dlib-${BRANCH} dlib \
- && mkdir -p /dlib/build \
- && (cd /dlib/build \
+ && mv dlib-* dlib \
+ && mkdir -p dlib/build \
+ && (cd dlib/build \
     && cmake -DCMAKE_BUILD_TYPE=Release -DDLIB_PNG_SUPPORT=ON -DDLIB_GIF_SUPPORT=ON -DDLIB_JPEG_SUPPORT=ON .. \
     && cmake --build . --config Release -- -j2 \
     && make install) \
